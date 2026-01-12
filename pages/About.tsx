@@ -133,22 +133,47 @@ export const About: React.FC = () => {
 
       {/* Strategic Objectives */}
       <Section>
-        <div className="max-w-5xl mx-auto">
-           <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">Our Strategic Objectives</h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                "Provide Secure and Dignified Shelter for homeless, elderly, and vulnerable individuals.",
-                "Deliver Accredited Skills Development through AgriSETA and QCTO programmes.",
-                "Promote Reintegration through Employment, cooperatives, and incubation hubs.",
-                "Sustain Food Security and Agro-Enterprise to combat hunger and drive economic empowerment.",
-                "Mobilize Diverse and Sustainable Funding through social enterprises like our bakery.",
-                "Empower Marginalized Groups including youth, women, ex-offenders, and displaced individuals."
-              ].map((obj, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                   <div className="w-8 h-8 rounded-full bg-brand-green text-white flex items-center justify-center font-bold flex-shrink-0">{i + 1}</div>
-                   <p className="text-gray-700">{obj}</p>
-                </div>
-              ))}
+        <div className="max-w-6xl mx-auto">
+           <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">Strategic Focus Areas & Core Impact Pillars</h2>
+           
+           <div className="mb-12">
+             <h3 className="text-xl font-bold text-brand-green mb-6 uppercase tracking-wider">Core Impact Pillars</h3>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Dignified Shelter & Safe Care", desc: "Safe beds, structured house rules, and case-managed stays." },
+                  { title: "Food Security & Basic Needs", desc: "Daily meals, hygiene packs, and routine-building through consistency." },
+                  { title: "Health & Psychosocial Support", desc: "Social work, health referrals, and documentation support." },
+                  { title: "Skills Development & Training", desc: "Accredited training, workplace discipline, and practical competencies." },
+                  { title: "Economic Inclusion", desc: "Internal work roles, stipends, and external placements." },
+                  { title: "Reintegration & Independence", desc: "Planning for independent living and family reunification." }
+                ].map((obj, i) => (
+                  <div key={i} className="flex gap-4 items-start bg-gray-50 p-4 rounded-lg">
+                     <div className="w-8 h-8 rounded-full bg-brand-green text-white flex items-center justify-center font-bold flex-shrink-0">{i + 1}</div>
+                     <div>
+                       <h4 className="font-bold text-gray-900 text-sm">{obj.title}</h4>
+                       <p className="text-gray-600 text-sm">{obj.desc}</p>
+                     </div>
+                  </div>
+                ))}
+             </div>
+           </div>
+
+           <div>
+             <h3 className="text-xl font-bold text-brand-blue mb-6 uppercase tracking-wider">Mission Enablers</h3>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  "Social Enterprise & Sustainable Livelihoods",
+                  "Partnerships & Stakeholder Coordination",
+                  "Governance, Compliance & Risk Management",
+                  "Resource Mobilisation & Brand Trust",
+                  "Infrastructure & Operational Excellence"
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-center bg-brand-sand p-4 rounded-lg">
+                     <Icon name="Zap" size={18} className="text-brand-blue flex-shrink-0" />
+                     <p className="text-gray-800 font-medium text-sm">{item}</p>
+                  </div>
+                ))}
+             </div>
            </div>
         </div>
       </Section>

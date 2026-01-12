@@ -4,9 +4,17 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
   { label: 'Programs', path: '/programs' },
-  { label: 'Sponsors', path: '/sponsors' },
+  { label: 'Donors', path: '/donors' },
   { label: 'Gallery', path: '/gallery' },
-  { label: 'Contact', path: '/contact' },
+  { 
+    label: 'More', 
+    subItems: [
+      { label: 'Our Stats', path: '/impact' },
+      { label: 'Annual Report', path: '/annual-report' },
+      { label: 'Referral Guidelines', path: '/referral-guidelines' },
+      { label: 'Contact', path: '/contact' }
+    ]
+  },
 ];
 
 export const CORE_VALUES: Value[] = [
@@ -144,14 +152,14 @@ export const PROGRAMS: Program[] = [
     impact: 'Food security and supply chain strengthening.',
     iconName: 'Leaf',
     category: 'enterprise'
-  }
+  },
 ];
 
 export const IMPACT_STATS: Stat[] = [
-  { label: 'Lives Impacted', value: '300,000+', description: 'Across South Africa since inception (1986)' },
-  { label: 'Daily Meals', value: '2,000+', description: 'Provided to children in surrounding areas' },
-  { label: 'Weekly Support', value: '350+', description: 'Individuals in shelter & care programmes' },
-  { label: 'Street Outreach', value: '4,500+', description: 'Individuals reached every quarter' },
+  { label: 'Annual Beneficiaries', value: '5,200+', description: 'Receiving direct support in 2024/2025' },
+  { label: 'Children Supported', value: '3,446', description: 'Daily nutrition & support in ECD centres' },
+  { label: 'Adults Empowered', value: '532', description: 'Individuals in shelter, care & skills programmes' },
+  { label: 'Skills Graduates', value: '112', description: 'Completed accredited training (NQF Level 4)' },
 ];
 
 export const CONTACT_INFO = {

@@ -5,10 +5,13 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Programs } from './pages/Programs';
-import { Sponsors } from './pages/Sponsors';
+import { Donors } from './pages/Sponsors';
 import { GetInvolved } from './pages/GetInvolved';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { Impact } from './pages/Impact';
+import { AnnualReport } from './pages/AnnualReport';
+import { ReferralGuidelines } from './pages/ReferralGuidelines';
 import { WhatsAppButton } from './components/WhatsAppButton';
 
 const ScrollToTop = () => {
@@ -45,10 +48,13 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
-            <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/donors" element={<Donors />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/impact" element={<Impact />} />
+            <Route path="/annual-report" element={<AnnualReport />} />
+            <Route path="/referral-guidelines" element={<ReferralGuidelines />} />
           </Routes>
         </main>
         <Footer />

@@ -5,30 +5,53 @@ import { PROGRAMS, IMPACT_STATS, CORE_VALUES } from '../constants';
 import { ProgramCard } from '../components/ProgramCard';
 import { Icon } from '../components/Icon';
 
-const STRATEGIC_OBJECTIVES = [
+const CORE_IMPACT_PILLARS = [
   {
-    title: "Provide Secure and Dignified Shelter",
-    description: "Deliver safe, stable, and dignified housing solutions for homeless, elderly, and vulnerable individuals, ensuring access to basic human rights and personal development opportunities."
+    title: "Dignified Shelter & Safe Care Operations",
+    description: "Providing safe beds, structured house rules, and case-managed stays to protect vulnerable people. We focus on stabilization and compliance."
   },
   {
-    title: "Deliver Accredited Skills Development",
-    description: "Facilitate nationally accredited training through AgriSETA and QCTO programmes, with a focus on agriculture, artisan trades, and enterprise development to promote employability and self-reliance."
+    title: "Food Security & Basic Needs Restoration",
+    description: "Ensuring daily meals, hygiene packs, clothing, and routine-building through consistency to restore dignity and physical health."
   },
   {
-    title: "Promote Reintegration through Employment and Incubation",
-    description: "Enable reintegration into society by connecting beneficiaries to cooperatives, internships, and entrepreneurial incubation hubs that support long-term income generation and community inclusion."
+    title: "Health, Psychosocial Support & Stabilisation",
+    description: "Delivering social work services, health and addiction referrals, and documentation support to improve overall functioning."
   },
   {
-    title: "Sustain Food Security and Agro-Enterprise",
-    description: "Establish resilient food systems through internal crop and livestock production, partnerships with retailers, and agro-processing initiatives that combat hunger and drive economic empowerment."
+    title: "Skills Development, Training & Work-Readiness",
+    description: "Facilitating accredited training and practical competencies to build workplace discipline, attendance, and technical skills."
   },
   {
-    title: "Mobilize Diverse and Sustainable Funding",
-    description: "Generate income through social enterprises, including a bakery, events, and product distribution, while attracting donor support and corporate social investment aligned with SDG and B-BBEE goals."
+    title: "Economic Inclusion & Employment Pathways",
+    description: "Connecting beneficiaries to internal work roles, stipends, and external placements to foster financial independence and job retention."
   },
   {
-    title: "Empower Marginalized Groups for Economic Participation",
-    description: "Prioritize the empowerment of youth, women, ex-offenders, and displaced individuals through targeted skills programmes, mentorship, and pathways to full economic inclusion."
+    title: "Reintegration, Aftercare & Long-Term Independence",
+    description: "Planning for family reunification, independent living, and long-term retention in stable environments to reduce recidivism."
+  }
+];
+
+const MISSION_ENABLERS = [
+  {
+    title: "Social Enterprise & Sustainable Livelihoods",
+    description: "Generating revenue through agriculture, production projects, and service contracts to fund ongoing impact."
+  },
+  {
+    title: "Partnerships & Stakeholder Coordination",
+    description: "Collaborating with SAPS, social development partners, and employers for coordinated community interventions."
+  },
+  {
+    title: "Governance, Compliance & Risk Management",
+    description: "Maintaining strict policies, financial controls, clean audits, and donor compliance to ensure integrity."
+  },
+  {
+    title: "Resource Mobilisation & Brand Trust",
+    description: "Building donor relations, digital marketing, and transparent impact storytelling to mobilize resources."
+  },
+  {
+    title: "Infrastructure & Operational Excellence",
+    description: "Ensuring site upgrades, maintenance, safety systems, and procurement efficiency to support our operations."
   }
 ];
 
@@ -149,26 +172,58 @@ export const Home: React.FC = () => {
         </div>
       </Section>
 
-      {/* Strategic Objectives */}
+      {/* Strategic Objectives (Replaces old Strategic Objectives) */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-4">Our Strategic Objectives</h2>
-          <div className="w-24 h-1 bg-brand-earth mx-auto rounded-full"></div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-4">MCC Strategic Focus Areas</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            Our work is driven by defined impact pillars and mission enablers that ensure every action leads to measurable change.
+          </p>
+          <div className="w-24 h-1 bg-brand-earth mx-auto rounded-full mt-6"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {STRATEGIC_OBJECTIVES.map((obj, index) => (
-            <div key={index} className="flex flex-col h-full bg-gray-50 p-6 rounded-xl border-l-4 border-brand-green hover:shadow-lg transition-shadow duration-300">
-              <div className="flex items-start gap-4 mb-3">
-                <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-green text-white font-bold text-sm">
-                  {index + 1}
-                </span>
-                <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+
+        {/* Core Impact Pillars */}
+        <div className="mb-16">
+          <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-green pl-4 uppercase tracking-wide">
+            Core Impact Pillars
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CORE_IMPACT_PILLARS.map((obj, index) => (
+              <div key={index} className="flex flex-col h-full bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="flex items-start gap-4 mb-3">
+                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-green text-white font-bold text-sm">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed pl-12">
+                  {obj.description}
+                </p>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed pl-12">
-                {obj.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Mission Enablers */}
+        <div>
+          <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-blue pl-4 uppercase tracking-wide">
+            Mission Enablers
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {MISSION_ENABLERS.map((obj, index) => (
+              <div key={index} className="flex flex-col h-full bg-brand-sand p-6 rounded-xl border-t-2 border-brand-blue hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-start gap-4 mb-3">
+                   <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-brand-blue">
+                     <Icon name="Zap" size={20} />
+                   </div>
+                   <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed pl-12">
+                  {obj.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 

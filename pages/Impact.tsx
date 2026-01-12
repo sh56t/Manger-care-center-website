@@ -5,10 +5,10 @@ import { IMPACT_STATS } from '../constants';
 export const Impact: React.FC = () => {
   return (
     <>
-      <div className="bg-brand-earth py-20 text-white">
+      <div className="bg-brand-darkGreen py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-serif font-bold mb-4">Our Impact</h1>
-          <p className="text-xl text-orange-100 max-w-2xl mx-auto">
+          <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
             Measuring the change we make in real lives, every single day.
           </p>
         </div>
@@ -17,8 +17,8 @@ export const Impact: React.FC = () => {
       <Section>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {IMPACT_STATS.map((stat, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-xl shadow-lg border-b-4 border-brand-earth text-center">
-              <div className="text-4xl font-bold text-brand-earth mb-2">{stat.value}</div>
+            <div key={idx} className="bg-white p-8 rounded-xl shadow-lg border-b-4 border-brand-green text-center">
+              <div className="text-4xl font-bold text-brand-green mb-2">{stat.value}</div>
               <div className="text-lg font-bold text-gray-800 mb-2">{stat.label}</div>
               <p className="text-sm text-gray-500">{stat.description}</p>
             </div>

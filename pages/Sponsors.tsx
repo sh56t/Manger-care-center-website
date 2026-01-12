@@ -4,7 +4,7 @@ import { IMPACT_STATS } from '../constants';
 import { Icon } from '../components/Icon';
 import { NavLink } from 'react-router-dom';
 
-interface Sponsor {
+interface Donor {
   id: number;
   name: string;
   category: string;
@@ -13,7 +13,7 @@ interface Sponsor {
 
 // NOTE: Create a folder named 'images' inside your 'public' folder.
 // Add your image files there with the filenames listed below (e.g., kgalema.png, agriseta.png).
-const SPONSORS: Sponsor[] = [
+const DONORS: Donor[] = [
   { 
     id: 1, 
     name: 'Eazi access', 
@@ -84,14 +84,14 @@ const SPONSORS: Sponsor[] = [
   
 ];
 
-export const Sponsors: React.FC = () => {
-  const [showSponsors, setShowSponsors] = useState(false);
+export const Donors: React.FC = () => {
+  const [showDonors, setShowDonors] = useState(false);
 
   return (
     <>
       <div className="bg-brand-darkGreen py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Our Partners & Sponsors</h1>
+          <h1 className="text-4xl font-serif font-bold mb-4">Our Partners & Donors</h1>
           <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
             Collaborating for sustainable community development.
           </p>
@@ -100,34 +100,39 @@ export const Sponsors: React.FC = () => {
 
       <Section>
         <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">The Ecosystem of Care</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg mb-8">
+            Impact is a team sport. We are honored to work with these strategic organizations who provide the resources, expertise, and support that make our work possible.
+          </p>
+          
           {/* Interaction Area: One Image -> Reveal All */}
-          {!showSponsors ? (
+          {!showDonors ? (
             <div 
-              onClick={() => setShowSponsors(true)}
+              onClick={() => setShowDonors(true)}
               className="cursor-pointer max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl group relative h-80 bg-gray-900"
             >
                <img 
                  src="https://drive.google.com/thumbnail?id=1NmobaCp91-qQTWpDwTym8ZRDQx6tmpps&sz=w1000"
-                 alt="Our Partnerships" 
+                 alt="Our Donors" 
                  className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
                />
                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
                   <div className="bg-brand-green/90 p-4 rounded-full mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Icon name="Users" size={48} className="text-white" />
                   </div>
-                  <h3 className="text-3xl font-serif font-bold mb-2">View Our Corporate Partners</h3>
-                  <p className="text-emerald-100 text-lg mb-6">Click to reveal our network of sponsors</p>
+                  <h3 className="text-3xl font-serif font-bold mb-2">View Our Corporate Donors</h3>
+                  <p className="text-emerald-100 text-lg mb-6">Click to reveal our network of donors</p>
                   <button className="bg-white text-brand-darkGreen font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition">
-                     Show Partners
+                     Show Donors
                   </button>
                </div>
             </div>
           ) : (
             <div className="animate-fadeIn">
                 <div className="flex justify-between items-center max-w-6xl mx-auto mb-6 px-4">
-                   <h3 className="text-xl font-bold text-gray-800">Our Partners</h3>
+                   <h3 className="text-xl font-bold text-gray-800">Our Donors</h3>
                    <button 
-                     onClick={() => setShowSponsors(false)}
+                     onClick={() => setShowDonors(false)}
                      className="text-gray-500 hover:text-brand-green flex items-center gap-2 text-sm font-medium transition-colors"
                    >
                      <Icon name="X" size={16} /> Close View
@@ -136,21 +141,21 @@ export const Sponsors: React.FC = () => {
                 
                 {/* Updated Grid: Clustered and Consolidated */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-12 justify-items-center">
-                  {SPONSORS.map((sponsor) => (
+                  {DONORS.map((donor) => (
                     <div 
-                      key={sponsor.id} 
+                      key={donor.id} 
                       className="group w-full bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full border border-gray-100"
                     >
                       {/* Image Container - Compact height */}
                       <div className="w-full h-32 bg-gray-50 flex items-center justify-center p-3 relative">
                          <img 
-                            src={sponsor.logoUrl} 
-                            alt={sponsor.name} 
+                            src={donor.logoUrl} 
+                            alt={donor.name} 
                             className="max-h-20 w-auto object-contain bg-white p-1 rounded transition-transform duration-300 group-hover:scale-105"
                             referrerPolicy="no-referrer"
                             onError={(e) => {
                               // Fallback to placeholder if image is missing
-                              e.currentTarget.src = `https://placehold.co/400x300/png?text=${encodeURIComponent(sponsor.name)}`;
+                              e.currentTarget.src = `https://placehold.co/400x300/png?text=${encodeURIComponent(donor.name)}`;
                               e.currentTarget.onerror = null;
                             }}
                          />
@@ -158,10 +163,10 @@ export const Sponsors: React.FC = () => {
 
                       {/* Content - Compact padding */}
                       <div className="p-3 text-center border-t border-gray-50 flex-grow flex flex-col justify-center items-center">
-                          <h3 className="text-xs sm:text-sm font-bold text-gray-800 leading-tight mb-1">{sponsor.name}</h3>
-                          {sponsor.category && (
+                          <h3 className="text-xs sm:text-sm font-bold text-gray-800 leading-tight mb-1">{donor.name}</h3>
+                          {donor.category && (
                             <span className="inline-block px-2 py-0.5 bg-brand-sand text-brand-darkGreen text-[10px] font-bold uppercase tracking-wider rounded-full">
-                              {sponsor.category}
+                              {donor.category}
                             </span>
                           )}
                       </div>
@@ -171,7 +176,7 @@ export const Sponsors: React.FC = () => {
                 
                 <div className="text-center">
                    <button 
-                     onClick={() => setShowSponsors(false)}
+                     onClick={() => setShowDonors(false)}
                      className="bg-gray-100 text-gray-600 hover:bg-gray-200 font-medium px-6 py-2 rounded-full transition"
                    >
                       Collapse List
@@ -223,7 +228,7 @@ export const Sponsors: React.FC = () => {
 
       <Section>
         <div className="bg-brand-darkGreen rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl">
-            <h2 className="text-3xl font-serif font-bold mb-6">Become a Corporate Partner</h2>
+            <h2 className="text-3xl font-serif font-bold mb-6">Become a Corporate Donor</h2>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <NavLink to="/contact" className="bg-white text-brand-darkGreen font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition shadow-lg">

@@ -16,7 +16,8 @@ export interface Value {
 
 export interface NavItem {
   label: string;
-  path: string;
+  path?: string;
+  subItems?: NavItem[];
 }
 
 export interface Stat {
