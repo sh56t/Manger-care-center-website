@@ -10,8 +10,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-             <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full p-1">
+             <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 flex items-center justify-center bg-white rounded-full p-1 flex-shrink-0">
                   <img 
                     src="https://drive.google.com/thumbnail?id=1SA2ulVqHW6QAQKOloMPnR9w8ioAPfVjZ&sz=w200" 
                     alt="Manger Care Centre Logo" 
@@ -19,7 +19,10 @@ export const Footer: React.FC = () => {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <span className="font-serif font-bold text-lg text-white">MANGER Care Centre</span>
+                <div>
+                  <span className="font-serif font-bold text-lg text-white block leading-tight">MANGER Care Centre</span>
+                  <span className="text-xs text-emerald-200 uppercase tracking-widest block font-sans">and Development</span>
+                </div>
             </div>
             <p className="text-emerald-50 text-sm leading-relaxed mb-4">
               Restoring dignity, providing protection, and empowering the future of our community through holistic care and development.

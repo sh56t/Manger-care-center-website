@@ -60,7 +60,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Destitute, recovering addicts, ex-parolees',
     impact: 'Restoration of dignity and sustainable reintegration.',
     iconName: 'Home',
-    category: 'social'
+    category: 'social',
+    imageUrl: 'Mcc-Eden2-logo.png'
   },
   {
     id: 'robmen',
@@ -69,7 +70,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'People with disabilities',
     impact: 'Dignified living in a family setting.',
     iconName: 'Heart',
-    category: 'social'
+    category: 'social',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1RDI8x_fAjieL0xc5COBD_18TxDVA-fJN&sz=w1000'
   },
   {
     id: 'manger-marine',
@@ -78,7 +80,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Elderly and disabled individuals',
     impact: 'A sanctuary honoring the golden years.',
     iconName: 'Shield',
-    category: 'social'
+    category: 'social',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1NmobaCp91-qQTWpDwTym8ZRDQx6tmpps&sz=w1000'
   },
   {
     id: 'manna',
@@ -87,7 +90,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Children in ECD centres',
     impact: 'Nutritional support for early development.',
     iconName: 'Baby',
-    category: 'social'
+    category: 'social',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1hpD8X3gdTsCteNyRcZcDlHCuwOcE2UxP&sz=w1000'
   },
   // Skills Development
   {
@@ -97,7 +101,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Unemployed youth and shelter residents',
     impact: 'AgriSETA qualifications and work-readiness.',
     iconName: 'GraduationCap',
-    category: 'skills'
+    category: 'skills',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1_uh5djz4RnU4gWilpf-0tnMjpOX-z5Px&sz=w1000'
   },
   {
     id: 'bakery',
@@ -106,7 +111,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Trainee bakers',
     impact: 'Vocational skills and daily bread for the community.',
     iconName: 'Zap',
-    category: 'skills'
+    category: 'skills',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1cTWODvnZR3lXeOKTw1JYkndX35rgnUGh&sz=w1000'
   },
   {
     id: 'bapsfontein-skills',
@@ -115,7 +121,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Shelter residents',
     impact: 'Practical competence and entrepreneurial mindsets.',
     iconName: 'Brain',
-    category: 'skills'
+    category: 'skills',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1LhBN8XBmvgghn-gStxzsWnLKrXugJLtw&sz=w1000'
   },
   // Enterprise Development
   {
@@ -125,7 +132,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Rural community & beneficiaries',
     impact: 'Self-sustaining income and rural economic development.',
     iconName: 'MapPin',
-    category: 'enterprise'
+    category: 'enterprise',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1p71OMbnkjXHnzbKfWl3t0rE-xBwTNd_A&sz=w1000'
   },
   {
     id: 'manufacturing',
@@ -134,7 +142,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Youth artisans',
     impact: 'Job creation and infrastructure support.',
     iconName: 'ShieldCheck',
-    category: 'enterprise'
+    category: 'enterprise',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1_yXl6vPdYFPyyc6cnm6YcQo6ylM_2UI5&sz=w1000'
   },
   {
     id: 'seedlings',
@@ -143,7 +152,8 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Smallholder farmers',
     impact: 'Food security and supply chain strengthening.',
     iconName: 'Leaf',
-    category: 'enterprise'
+    category: 'enterprise',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1eKGRGXkdQ2uPJCykUlEwBoOoUsqHpTMY&sz=w1000'
   },
 ];
 

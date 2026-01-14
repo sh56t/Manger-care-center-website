@@ -13,19 +13,16 @@ interface Donor {
   logoUrl: string;
 }
 
-// NOTE: Create a folder named 'images' inside your 'public' folder.
-// Add your image files there with the filenames listed below (e.g., kgalema.png, agriseta.png).
 const DONORS: Donor[] = [
   { 
     id: 1, 
-    name: 'Eazi access', 
-    category: 'Total Energies', 
-    // Updated to use the reliable thumbnail link format
+    name: 'Eazi Access', 
+    category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1QZnCeWFHs-BKA2RbqQay8mycE_tzvAJS&sz=w1000' 
   },
   { 
     id: 2, 
-    name: 'Toatal energie', 
+    name: 'TotalEnergies', 
     category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1gWDu0X9HRJVEA8ERF4rjM1rWAQuVfCpo&sz=w1000' 
   },
@@ -43,7 +40,7 @@ const DONORS: Donor[] = [
   },
   { 
     id: 5, 
-    name: 'kgalema motlanthe foundation', 
+    name: 'Kgalema Motlanthe Foundation', 
     category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1HlMMkLjnsuFzgw1nqcWVwaDe2DFTnmmK&sz=w1000' 
   },
@@ -61,7 +58,7 @@ const DONORS: Donor[] = [
   },
   { 
     id: 8, 
-    name: 'Agriseta', 
+    name: 'AgriSETA', 
     category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1TYhM6kYi7P8YG0dr119ozOW1tHtvQGzX&sz=w1000'
   },
@@ -73,7 +70,7 @@ const DONORS: Donor[] = [
   },
   { 
     id: 10, 
-    name: 'siyabonga africa', 
+    name: 'Siyabonga Africa', 
     category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1kusdEJz5SU1OkoUHy0G6JaMg998DImHS&sz=w1000' 
   },
@@ -83,7 +80,6 @@ const DONORS: Donor[] = [
     category: '', 
     logoUrl: 'https://drive.google.com/thumbnail?id=1I9wwkcJle-eTlOrb15MNL__UbFtjCGrK&sz=w1000' 
   },
-  
 ];
 
 export const Donors: React.FC = () => {

@@ -63,31 +63,43 @@ export const Programs: React.FC = () => {
                   {/* Decorative background stripe */}
                   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-green group-hover:bg-brand-darkGreen transition-colors"></div>
 
-                  {/* Icon Column */}
+                  {/* Image or Icon Column */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-brand-sand rounded-full flex items-center justify-center text-brand-green">
-                      <Icon name={program.iconName} size={32} />
-                    </div>
+                    {program.imageUrl ? (
+                      <div className="w-full md:w-64 h-48 md:h-auto rounded-xl overflow-hidden shadow-sm md:aspect-[4/3] bg-gray-100">
+                        <img 
+                          src={program.imageUrl} 
+                          alt={program.title} 
+                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 bg-brand-sand rounded-full flex items-center justify-center text-brand-green">
+                        <Icon name={program.iconName} size={32} />
+                      </div>
+                    )}
                   </div>
 
                   {/* Main Content */}
-                  <div className="flex-grow">
+                  <div className="flex-grow flex flex-col justify-center">
                     <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3">{program.title}</h3>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4 md:mb-0">
+                    <p className="text-gray-600 leading-relaxed text-lg mb-4 md:mb-6">
                       {program.description}
                     </p>
-                  </div>
 
-                  {/* Details Column */}
-                  <div className="md:w-1/3 flex-shrink-0 flex flex-col justify-center bg-gray-50 rounded-xl p-5 border border-gray-100">
-                     <div className="mb-4">
-                        <span className="text-xs font-bold text-brand-blue uppercase tracking-wider block mb-1">Beneficiaries</span>
-                        <span className="text-gray-800 font-medium">{program.beneficiaries}</span>
-                     </div>
-                     <div>
-                        <span className="text-xs font-bold text-brand-darkGreen uppercase tracking-wider block mb-1">Key Impact</span>
-                        <span className="text-gray-800 italic text-sm">"{program.impact}"</span>
-                     </div>
+                    {/* Details in the text column if image is present, or sidebar if icon */}
+                    <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 mt-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                           <div>
+                              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider block mb-1">Beneficiaries</span>
+                              <span className="text-gray-800 font-medium text-sm">{program.beneficiaries}</span>
+                           </div>
+                           <div>
+                              <span className="text-xs font-bold text-brand-darkGreen uppercase tracking-wider block mb-1">Key Impact</span>
+                              <span className="text-gray-800 italic text-sm">"{program.impact}"</span>
+                           </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </Reveal>

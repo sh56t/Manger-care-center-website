@@ -6,6 +6,7 @@ export interface Program {
   impact: string;
   iconName: string;
   category: 'social' | 'skills' | 'enterprise';
+  imageUrl?: string;
 }
 
 export interface Value {
