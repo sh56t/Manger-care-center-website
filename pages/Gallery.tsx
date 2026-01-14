@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section } from '../components/Section';
+import { Reveal } from '../components/Reveal';
 
 export const Gallery: React.FC = () => {
   const images = [
@@ -24,27 +25,38 @@ export const Gallery: React.FC = () => {
     <>
       <div className="bg-brand-darkGreen py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Gallery</h1>
-          <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
-            Moments of joy, resilience, and community in action.
-          </p>
+          <Reveal className="mx-auto">
+            <h1 className="text-4xl font-serif font-bold mb-4">Gallery</h1>
+            <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
+              Moments of joy, resilience, and community in action.
+            </p>
+          </Reveal>
         </div>
       </div>
 
       <Section>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {images.map((img, idx) => (
-            <div key={idx} className="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer">
-              <img 
-                src={img.url} 
-                alt={img.caption} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">{img.caption}</span>
-              </div>
-            </div>
-          ))}
+          {images.map((img, idx) => {
+            // Check for images that need significant scaling due to source content size
+            const isZoomedImage = img.caption === 'Sustainable Farming' || img.caption === 'Growth & Impact';
+            
+            return (
+              <Reveal key={idx} delay={(idx % 3) * 0.1} direction="left" width="100%">
+                <div className="group relative overflow-hidden rounded-xl h-72 md:h-80 w-full cursor-pointer shadow-sm hover:shadow-lg transition-all">
+                  <img 
+                    src={img.url} 
+                    alt={img.caption} 
+                    className={`w-full h-full object-cover transition-transform duration-700 ${
+                      isZoomedImage ? 'scale-[1.7] group-hover:scale-[1.8]' : 'group-hover:scale-110'
+                    }`}
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.caption}</span>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
     </>

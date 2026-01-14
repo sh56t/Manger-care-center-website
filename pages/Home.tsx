@@ -4,6 +4,8 @@ import { Section } from '../components/Section';
 import { PROGRAMS, IMPACT_STATS, CORE_VALUES } from '../constants';
 import { ProgramCard } from '../components/ProgramCard';
 import { Icon } from '../components/Icon';
+import { Reveal } from '../components/Reveal';
+import { CircularStat } from '../components/CircularStat';
 
 const CORE_IMPACT_PILLARS = [
   {
@@ -99,42 +101,52 @@ export const Home: React.FC = () => {
 
       {/* Intro / Mission Brief */}
       <Section className="text-center">
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-6">Our Purpose</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            At Manger Care Centre (MCC), we restore dignity, hope, and opportunity to those facing vulnerability and homelessness. Beyond providing food and shelter, we invest in holistic development—equipping individuals with skills, independence, and purpose.
-          </p>
-        </div>
+        <Reveal width="100%">
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-6">Our Purpose</h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              At Manger Care Centre (MCC), we restore dignity, hope, and opportunity to those facing vulnerability and homelessness. Beyond providing food and shelter, we invest in holistic development—equipping individuals with skills, independence, and purpose.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 text-left">
-          <div className="bg-brand-sand p-8 rounded-2xl border-t-4 border-brand-blue shadow-sm hover:shadow-md transition-shadow">
-             <h3 className="text-2xl font-serif font-bold text-brand-blue mb-4 flex items-center gap-3">
-                <Icon name="Eye" size={28} /> Our Vision
-             </h3>
-             <p className="text-gray-700 text-lg leading-relaxed">
-               Our vision is to create a caring and loving environment that enables positive upliftment and empowerment for people.
-             </p>
-          </div>
-          <div className="bg-brand-sand p-8 rounded-2xl border-t-4 border-brand-green shadow-sm hover:shadow-md transition-shadow">
-             <h3 className="text-2xl font-serif font-bold text-brand-green mb-4 flex items-center gap-3">
-                <Icon name="Target" size={28} /> Our Mission
-             </h3>
-             <p className="text-gray-700 text-lg leading-relaxed">
-               Our mission is to manage projects that provide food, clothing, skills development, employment opportunities, rehabilitation services, and housing for our beneficiaries. We also give access to psychosocial, health, and spiritual guidance counselling, training on life skills, encouraging on-the-job development, and training to empower the vulnerable to feel valuable as society members.
-             </p>
-          </div>
+          <Reveal direction="left" delay={0.2} className="h-full">
+            <div className="bg-brand-sand p-8 rounded-2xl border-t-4 border-brand-blue shadow-sm hover:shadow-md transition-shadow h-full">
+               <h3 className="text-2xl font-serif font-bold text-brand-blue mb-4 flex items-center gap-3">
+                  <Icon name="Eye" size={28} /> Our Vision
+               </h3>
+               <p className="text-gray-700 text-lg leading-relaxed">
+                 Our vision is to create a caring and loving environment that enables positive upliftment and empowerment for people.
+               </p>
+            </div>
+          </Reveal>
+          <Reveal direction="right" delay={0.4} className="h-full">
+            <div className="bg-brand-sand p-8 rounded-2xl border-t-4 border-brand-green shadow-sm hover:shadow-md transition-shadow h-full">
+               <h3 className="text-2xl font-serif font-bold text-brand-green mb-4 flex items-center gap-3">
+                  <Icon name="Target" size={28} /> Our Mission
+               </h3>
+               <p className="text-gray-700 text-lg leading-relaxed">
+                 Our mission is to manage projects that provide food, clothing, skills development, employment opportunities, rehabilitation services, and housing for our beneficiaries. We also give access to psychosocial, health, and spiritual guidance counselling, training on life skills, encouraging on-the-job development, and training to empower the vulnerable to feel valuable as society members.
+               </p>
+            </div>
+          </Reveal>
         </div>
 
         <div className="text-center">
-           <h3 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-wide text-sm">Guided by our Core Values</h3>
+           <Reveal>
+             <h3 className="text-2xl font-bold text-gray-900 mb-8 uppercase tracking-wide text-sm">Guided by our Core Values</h3>
+           </Reveal>
            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {CORE_VALUES.map((val, idx) => (
-                <div key={idx} className="flex flex-col items-center gap-3 group">
-                   <div className="w-12 h-12 rounded-full bg-emerald-50 text-brand-green flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
-                      <Icon name={val.iconName} size={20} />
-                   </div>
-                   <span className="font-medium text-gray-800">{val.title}</span>
-                </div>
+                <Reveal key={idx} delay={idx * 0.1} direction="up">
+                  <div className="flex flex-col items-center gap-3 group">
+                     <div className="w-12 h-12 rounded-full bg-emerald-50 text-brand-green flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
+                        <Icon name={val.iconName} size={20} />
+                     </div>
+                     <span className="font-medium text-gray-800">{val.title}</span>
+                  </div>
+                </Reveal>
               ))}
            </div>
         </div>
@@ -142,86 +154,110 @@ export const Home: React.FC = () => {
 
       {/* Focus Areas Preview */}
       <Section bg="light">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">Strategic Focus Areas</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            From emergency shelter to sustainable enterprise, our programs cover the full spectrum of community restoration.
-          </p>
-        </div>
+        <Reveal width="100%">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">Strategic Focus Areas</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              From emergency shelter to sustainable enterprise, our programs cover the full spectrum of community restoration.
+            </p>
+          </div>
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROGRAMS.slice(0, 3).map(program => (
-            <ProgramCard key={program.id} program={program} />
+          {PROGRAMS.slice(0, 3).map((program, index) => (
+            <Reveal key={program.id} delay={index * 0.2} direction="up" className="h-full">
+              <ProgramCard program={program} />
+            </Reveal>
           ))}
         </div>
         <div className="text-center mt-12">
-          <NavLink to="/programs" className="inline-block px-6 py-3 border border-brand-green text-brand-green font-medium rounded-lg hover:bg-brand-green hover:text-white transition">
-            Explore All Projects
-          </NavLink>
+          <Reveal delay={0.4}>
+            <NavLink to="/programs" className="inline-block px-6 py-3 border border-brand-green text-brand-green font-medium rounded-lg hover:bg-brand-green hover:text-white transition">
+              Explore All Projects
+            </NavLink>
+          </Reveal>
         </div>
       </Section>
 
-      {/* Impact Highlights */}
-      <Section bg="brand" className="relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-emerald-800/50">
+      {/* Impact Highlights - CIRCULAR GRAPHS */}
+      <Section bg="brand" className="relative overflow-hidden">
+        {/* Decorative background gradient */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 justify-items-center">
           {IMPACT_STATS.map((stat, idx) => (
-            <div key={idx} className="p-4">
-              <div className="text-3xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-emerald-100 font-medium text-sm md:text-base">{stat.label}</div>
-            </div>
+            <Reveal key={idx} delay={idx * 0.1} direction="up" width="100%" className="flex justify-center">
+              <CircularStat 
+                value={stat.value}
+                label={stat.label}
+                description={stat.description}
+                theme="light"
+                delay={idx * 0.2}
+              />
+            </Reveal>
           ))}
         </div>
       </Section>
 
-      {/* Strategic Objectives (Replaces old Strategic Objectives) */}
+      {/* Strategic Objectives */}
       <Section>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-4">MCC Strategic Focus Areas</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Our work is driven by defined impact pillars and mission enablers that ensure every action leads to measurable change.
-          </p>
-          <div className="w-24 h-1 bg-brand-earth mx-auto rounded-full mt-6"></div>
-        </div>
+        <Reveal width="100%">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-serif font-bold text-brand-darkGreen mb-4">MCC Strategic Focus Areas</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Our work is driven by defined impact pillars and mission enablers that ensure every action leads to measurable change.
+            </p>
+            <div className="w-24 h-1 bg-brand-earth mx-auto rounded-full mt-6"></div>
+          </div>
+        </Reveal>
 
         {/* Core Impact Pillars */}
         <div className="mb-16">
-          <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-green pl-4 uppercase tracking-wide">
-            Core Impact Pillars
-          </h3>
+          <Reveal direction="right">
+            <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-green pl-4 uppercase tracking-wide">
+              Core Impact Pillars
+            </h3>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CORE_IMPACT_PILLARS.map((obj, index) => (
-              <div key={index} className="flex flex-col h-full bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-                <div className="flex items-start gap-4 mb-3">
-                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-green text-white font-bold text-sm">
-                    {index + 1}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+              <Reveal key={index} delay={index * 0.1} className="h-full">
+                <div className="flex flex-col h-full bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-start gap-4 mb-3">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-green text-white font-bold text-sm">
+                      {index + 1}
+                    </span>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed pl-12">
+                    {obj.description}
+                  </p>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed pl-12">
-                  {obj.description}
-                </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
         {/* Mission Enablers */}
         <div>
-          <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-blue pl-4 uppercase tracking-wide">
-            Mission Enablers
-          </h3>
+          <Reveal direction="right">
+            <h3 className="text-xl font-bold text-gray-900 mb-8 border-l-4 border-brand-blue pl-4 uppercase tracking-wide">
+              Mission Enablers
+            </h3>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {MISSION_ENABLERS.map((obj, index) => (
-              <div key={index} className="flex flex-col h-full bg-brand-sand p-6 rounded-xl border-t-2 border-brand-blue hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start gap-4 mb-3">
-                   <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-brand-blue">
-                     <Icon name="Zap" size={20} />
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+              <Reveal key={index} delay={index * 0.1} className="h-full">
+                <div className="flex flex-col h-full bg-brand-sand p-6 rounded-xl border-t-2 border-brand-blue hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start gap-4 mb-3">
+                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-brand-blue">
+                       <Icon name="Zap" size={20} />
+                     </div>
+                     <h3 className="text-lg font-bold text-gray-900 leading-tight pt-1">{obj.title}</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed pl-12">
+                    {obj.description}
+                  </p>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed pl-12">
-                  {obj.description}
-                </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -229,27 +265,29 @@ export const Home: React.FC = () => {
 
       {/* Call to Action */}
       <Section>
-        <div className="bg-brand-blue rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row">
-          <div className="md:w-1/2 relative h-64 md:h-auto">
-             <img 
-               src="https://drive.google.com/thumbnail?id=1Jzj0vNA-qcl2dwThyWyRqpYpz7kl1UiO&sz=w1000" 
-               alt="Zen Teitge speaking to investors" 
-               className="absolute inset-0 w-full h-full object-cover"
-               referrerPolicy="no-referrer"
-             />
-          </div>
-          <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white">
-            <h2 className="text-3xl font-serif font-bold mb-4">Stop! Help! You Make the Difference!</h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              MCC is actively seeking corporate social investment (CSI) partners. Partner with us to drive sustainable enterprise development and create lasting socio-economic impact.
-            </p>
-            <div className="flex gap-4">
-              <NavLink to="/contact" className="bg-white text-brand-blue px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition">
-                Partner With Us
-              </NavLink>
+        <Reveal>
+          <div className="bg-brand-blue rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row">
+            <div className="md:w-1/2 relative h-64 md:h-auto">
+               <img 
+                 src="https://drive.google.com/thumbnail?id=1Jzj0vNA-qcl2dwThyWyRqpYpz7kl1UiO&sz=w1000" 
+                 alt="Zen Teitge speaking to investors" 
+                 className="absolute inset-0 w-full h-full object-cover"
+                 referrerPolicy="no-referrer"
+               />
+            </div>
+            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white">
+              <h2 className="text-3xl font-serif font-bold mb-4">Stop! Help! You Make the Difference!</h2>
+              <p className="text-blue-100 mb-8 text-lg">
+                MCC is actively seeking corporate social investment (CSI) partners. Partner with us to drive sustainable enterprise development and create lasting socio-economic impact.
+              </p>
+              <div className="flex gap-4">
+                <NavLink to="/contact" className="bg-white text-brand-blue px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition">
+                  Partner With Us
+                </NavLink>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

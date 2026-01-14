@@ -36,11 +36,14 @@ export const Footer: React.FC = () => {
             <h3 className="text-lg font-serif font-semibold mb-4 text-emerald-100">Quick Links</h3>
             <ul className="space-y-2">
               {NAV_ITEMS.map(item => (
-                <li key={item.path}>
-                  <NavLink to={item.path} className="text-emerald-100 hover:text-white text-sm transition">
-                    {item.label}
-                  </NavLink>
-                </li>
+                // Only render items that have a direct path (exclude dropdown parents like 'More')
+                item.path ? (
+                  <li key={item.path}>
+                    <NavLink to={item.path} className="text-emerald-100 hover:text-white text-sm transition">
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ) : null
               ))}
               <li>
                   <NavLink to="/get-involved" className="text-emerald-100 hover:text-white text-sm transition">

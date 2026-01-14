@@ -6,6 +6,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Programs', path: '/programs' },
   { label: 'Donors', path: '/donors' },
   { label: 'Gallery', path: '/gallery' },
+  { label: 'Donate', path: '/get-involved' },
   { 
     label: 'More', 
     subItems: [
@@ -86,15 +87,6 @@ export const PROGRAMS: Program[] = [
     beneficiaries: 'Children in ECD centres',
     impact: 'Nutritional support for early development.',
     iconName: 'Baby',
-    category: 'social'
-  },
-  {
-    id: 'family-support',
-    title: 'Family Support Programme',
-    description: 'Facilitating the flow of essential food resources from donors to NPOs and vulnerable families, ensuring surplus reaches those in need.',
-    beneficiaries: 'Vulnerable families',
-    impact: 'Food security and strengthened local care economy.',
-    iconName: 'HandHeart',
     category: 'social'
   },
   // Skills Development
